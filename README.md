@@ -35,9 +35,11 @@ https://k21academy.com/terraform-iac/terraform-installation-overview/
 ```bash
 terraform init
 
-terraform plan (for checking if there is any configuration related issue)
+#for checking if there is any configuration related issue
+terraform plan 
 
-terraform deploy -auto-approve (if getting error run this second time)
+#if getting error run this second time
+terraform deploy -auto-approve 
 ```
 
 
