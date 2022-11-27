@@ -45,7 +45,7 @@ terraform deploy -auto-approve
 
 # _**Manual Steps**_:
 
-##Downloading WordPress:
+## Downloading WordPress:
 
 Login to the server and enter following commands to download Wordpress:
 
@@ -58,7 +58,7 @@ Login to the server and enter following commands to download Wordpress:
 2. This is done, you will grab the load balancer link and add A record in Route53 service. 
 3. After propagation, use that the new link to browse to browser where you can configure Wordpress and if proper configuration is done. You will see a test page of hello-world.
 
-##SNS subscription approval:
+## SNS subscription approval:
 
 After SNS Service is created, manually approve the subscription. 
 
