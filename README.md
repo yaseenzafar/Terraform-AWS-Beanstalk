@@ -52,7 +52,9 @@ Login to the server and enter following commands to download Wordpress:
   tar -xzvf latest.tar.gz
 ```
 
-Now move this to the web server directory. After this is done, you will grab the load balancer link and add A record in Route53 service. After propagation, use that the new link to browse to browser where you can configure Wordpress and if proper configuration is done. You will see a test page of hello-world.
+1. Move this to the web server directory. 
+2. This is done, you will grab the load balancer link and add A record in Route53 service. 
+3. After propagation, use that the new link to browse to browser where you can configure Wordpress and if proper configuration is done. You will see a test page of hello-world.
 
 # _**Architecture**_:
 
