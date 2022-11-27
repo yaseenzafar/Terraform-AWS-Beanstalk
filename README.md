@@ -42,6 +42,15 @@ terraform plan
 terraform deploy -auto-approve 
 ```
 
+# _**Brief Description**_:
+
+This project uses Terraform which leverages AWS Cloudformation to deploy Highly available and scalable Wordpress Application. It consists of multiple files:
+- provider.tf -> Defines the provider which in this case is AWS and region as well.
+- main.tf -> creates AWS Beanstalk Environment which uses PHP 8.1 application on OS Amazon Linux 2. It also creates application load balancer, scaling triggers as well as redirection of traffic from port 80 to 443.
+- rds.tf -> creates RDS instance and the engine used is mysql.
+- sns.tf -> creates SNS topic and subscription.
+- cloudwatch.tf -> creates cloudwatch alarm based upon CPUutilization metric and sends alert to SNS topic.
+
 
 # _**Manual Steps**_:
 
@@ -67,3 +76,6 @@ After SNS Service is created, manually subscribe SNS topic from email inbox.
 # _**Architecture**_:
 
 ![App Screenshot](https://raw.githubusercontent.com/yaseenzafar/Terraform-AWS-Beanstalk/main/Terraform%20and%20AWS%20Beanstalk%20architecture.png)
+
+
+
