@@ -1,14 +1,10 @@
-provider "aws" {
-  region = "us-west-2"
-}
-
-# Create elastic beanstalk application
+#----------------- Create elastic beanstalk application --------------#
  
 resource "aws_elastic_beanstalk_application" "elasticapp" {
   name = wordpressapp
 }
 
-# Create elastic beanstalk Environment
+#---------------- Create elastic beanstalk environment --------------#
 
 resource "aws_elastic_beanstalk_environment" "beanstalkappenv" {
   name                = wordpressappenv
@@ -51,16 +47,23 @@ resource "aws_elastic_beanstalk_environment" "beanstalkappenv" {
     name      = "ELBScheme"
     value     = "internet facing"
   }
-
+  
+  setting {
+    namespace = "aws:autoscaling:asg"                                            #For High Availability
+    name      = "Availability Zones"
+    value     = "Any 2"
+    
+  }
+ 
   setting {
     namespace = "aws:autoscaling:asg"
     name      = "MinSize"
-    value     = 2
+    value     = 1
   }
   setting {
     namespace = "aws:autoscaling:asg"
     name      = "MaxSize"
-    value     = 3
+    value     = 2
   }
   setting {
     namespace = "aws:elasticbeanstalk:healthreporting:system"
@@ -70,7 +73,7 @@ resource "aws_elastic_beanstalk_environment" "beanstalkappenv" {
  
 }
 
-# Setting up Load Balancer 
+#----------------- Setting up Load Balancer ---------------# 
 
   setting { 
     namespace = "aws:elbv2:listener:default"
@@ -115,7 +118,7 @@ resource "aws_elastic_beanstalk_environment" "beanstalkappenv" {
       value     = "HTTP"
   }
 
-# Trigger as per High CPU Utilization
+#---------------- Trigger as per High CPU Utilization --------------#
 
 setting {
     namespace = "aws:autoscaling:trigger"
@@ -166,7 +169,7 @@ setting {
     
   }
 
-# Redirection of traffic from port 80 to 443
+#--------------------- Redirection of traffic from port 80 to 443 ----------------------#
 
   resource "aws_lb_listener" "https_redirect" {
   load_balancer_arn = aws_elastic_beanstalk_environment.beanstalkappenv.load_balancers[0]

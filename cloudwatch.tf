@@ -8,7 +8,7 @@ resource "aws_cloudwatch_metric_alarm" "beanstalkalarm" {
   statistic                 = "Average"
   threshold                 = "80"
   alarm_description         = "This metric monitors ec2 cpu utilization"
-  alarm_actions       =  aws_sns_topic_subscription.user_updates_sqs_target
-  ok_actions          =  aws_sns_topic_subscription.user_updates_sqs_target
+  alarm_actions       =  aws_sns_topic_subscription.email_notification.topic_arn 
+  ok_actions          =  aws_sns_topic_subscription.email_notification.topic_arn
   
 }
