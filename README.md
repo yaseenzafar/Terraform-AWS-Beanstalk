@@ -40,7 +40,7 @@ https://k21academy.com/terraform-iac/terraform-installation-overview/
 # _**Manual**_:
 
 
-wget https://wordpress.org/latest.tar.gz
-tar -xzvf latest.tar.gz
+'wget https://wordpress.org/latest.tar.gz'
+'tar -xzvf latest.tar.gz'
 
 Now move this to the web server directory. After this is done, you will grab the load balancer link and add A record in Route53 service. After propagation, use that the new link to browse to browser where you can configure Wordpress and if proper configuration is done. You will see a test page of hello-world
