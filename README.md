@@ -41,8 +41,9 @@ terraform deploy -auto-approve (if getting error run this second time)
 ```
 
 
-# _**Manual**_:
+# _**Manual Steps**_:
 
+Login to the server and enter following commands to download Wordpress:
 
 ```bash
   wget https://wordpress.org/latest.tar.gz
