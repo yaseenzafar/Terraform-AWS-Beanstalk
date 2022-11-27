@@ -50,4 +50,8 @@ Login to the server and enter following commands to download Wordpress:
   tar -xzvf latest.tar.gz
 ```
 
-Now move this to the web server directory. After this is done, you will grab the load balancer link and add A record in Route53 service. After propagation, use that the new link to browse to browser where you can configure Wordpress and if proper configuration is done. You will see a test page of hello-world
+Now move this to the web server directory. After this is done, you will grab the load balancer link and add A record in Route53 service. After propagation, use that the new link to browse to browser where you can configure Wordpress and if proper configuration is done. You will see a test page of hello-world.
+
+# _**Architecture**_:
+
+![App Screenshot](https://raw.githubusercontent.com/yaseenzafar/Terraform-AWS-Beanstalk/main/Terraform%20and%20AWS%20Beanstalk%20architecture.png)
