@@ -7,6 +7,24 @@ This project uses Terraform which leverages AWS Cloudformation to deploy Highly 
 - sns.tf -> creates SNS topic and subscription.
 - cloudwatch.tf -> creates cloudwatch alarm based upon CPUutilization metric and sends alert to SNS topic.
 
+# _**To get your access key ID and secret access key**_:
+
+Open the IAM console at https://console.aws.amazon.com/iam/.
+
+On the navigation menu, choose Users.
+
+Choose your IAM user name.
+
+Open the Security credentials tab, and then choose Create access key.
+
+To see the new access key, choose Show. Your credentials resemble the following:
+
+Access key ID: ****************9UIK
+
+Secret access key: ****************SSxdr
+
+To download the key pair, choose Download .csv file. Store the .csv file with keys in a secure location.
+
 # _**Setup AWS CLI**_:
 
 Windows:
@@ -18,7 +36,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
 
 # _**Configure AWS CLI**_:
 
-In Terminal or Command prompt:
+In Terminal or Command prompt and fill in the blanks:
 
 
 ```bash
